@@ -145,19 +145,30 @@ public class Main {
         }
         else {
             if (digit == k) {
-                
+                return countNumberOf_Ks_Recursively(n / 10, k) + 1;
             }
-            return countNumberOf_Ks_Recursively(n / 10, k) + 1;
+            return countNumberOf_Ks_Recursively(n / 10, k);
         }
     } // Outputs the number of Ks in n.   Ex 4   with n = 323345321 and k = 3
 
-    public static void printNumberBackwards(int n) {} // Outputs n backwards one digit at a time  Ex 12345 à 54321
+    public static void printNumberBackwards(int n) {
+        if (n % 10 != 0) {
+            System.out.print(n % 10);
+            printNumberBackwards(n/10);
+        }
+    } // Outputs n backwards one digit at a time  Ex 12345 à 54321
 
-    public static void reverseNumRecursively(int n) {}  // Returns the number reversed.  Ex 12345 à 54321
+    public static int reverseNumRecursively(int n) {
+        return 0;
+    }  // Returns the number reversed.  Ex 12345 à 54321
 
-    public static void powerRecursively (int a, int b) {} // returns a^b
+    public static int powerRecursively (int a, int b) {
+        return 0;
+    } // returns a^b
 
-    public static void isPalindrome (long n)  {} // Given n, tell whether it is a Palindrome or not.   (‘long’ is a big int)
+    public static boolean isPalindrome (long n)  {
+        return true;
+    } // Given n, tell whether it is a Palindrome or not.   (‘long’ is a big int)
 
 }
 

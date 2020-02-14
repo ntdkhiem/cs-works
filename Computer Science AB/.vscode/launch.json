@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - client",
+            "request": "launch",
+            "mainClass": "client",
+            "projectName": "Computer Science AB_85203af9"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LibraryBook",
+            "request": "launch",
+            "mainClass": "LibraryBook",
+            "projectName": "Computer Science AB_85203af9"
+        }
+    ]
+}

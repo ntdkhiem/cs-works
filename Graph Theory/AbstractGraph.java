@@ -334,6 +334,17 @@ public abstract class AbstractGraph<V> implements Graph<V>
             }
             System.out.println();
         }
+        
+        public LinkedList<Edge> getEdges() {
+            LinkedList<Edge> edges = new LinkedList<>();
+            for (int i = 0; i < parent.length; i++) {
+                if (parent[i] != -1) {
+                    // Display an edge
+                    edges.add(new Edge((int) vertices.get(parent[i]), (int) vertices.get(i)));
+                }
+            }
+            return edges;
+        }
     }  
 
     public List<Integer> getPath(int u, int v) {
@@ -342,10 +353,69 @@ public abstract class AbstractGraph<V> implements Graph<V>
     }
     
     public boolean isCyclic() {
-        if (getSize() < 3) return false;
         Tree tree = bfs(0);
-        System.out.println(countEdges());
-        return tree.getNumberOfVerticesFound() < countEdges();
+        int edgesInGraph = 0;
+        for (List<Edge> le : neighbors) {
+            edgesInGraph += le.size();
+        }
+        edgesInGraph /= 2;
+        int edgesInTree = tree.getEdges().size();
+        int numParts = 1;
+        while (edgesInTree + numParts < vertices.size()) {
+            tree = bfs(edgesInTree + numParts);
+            edgesInTree += tree.getEdges().size();
+            numParts++;
+        }
+        return edgesInTree != edgesInGraph;
+    }
+    
+    public boolean isBipartite() {
+        if (vertices.size() <= 2) {
+            return true;
+        }
+        List<Integer> g1 = new LinkedList<Integer>(); //first group
+        List<Integer> g2 = new LinkedList<Integer>(); //second group
+        boolean[] visited = new boolean[vertices.size()];
+        Arrays.fill(visited, false);
+        g1.add(0);
+        visited[0] = true;
+        return isBipartite(0, visited, g1, g2);
+    }
+
+    private boolean isBipartite(int origin, boolean[] visited, List<Integer> g1, List<Integer> g2) {
+        for (Edge e : neighbors.get(origin)) {
+            if (!visited[e.v]) {
+                visited[e.v] = true;
+                g2.add(e.v);
+                if (!isBipartite(e.v, visited, g2, g1))
+                    return false;
+            } else if (g1.contains(e.v)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public List<List<Integer>> getBipartite() {
+        if (vertices.size() <= 2) {
+            System.out.println("It's not bipartite!");
+            return null;
+        }
+        List<Integer> g1 = new LinkedList<Integer>(); //first group
+        List<Integer> g2 = new LinkedList<Integer>(); //second group
+        boolean[] visited = new boolean[vertices.size()];
+        Arrays.fill(visited, false);
+        g1.add(0);
+        visited[0] = true;
+        if (isBipartite(0, visited, g1, g2)) {
+            List<List<Integer>> newlist = new LinkedList<>();
+            newlist.add(g1);
+            newlist.add(g2);
+            return newlist;
+        } else {
+            System.out.println("It's not bipartite!");
+            return null;
+        }
     }
     
 }

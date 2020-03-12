@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=GridWorldUtilities
+comment1.params=
+comment1.target=void\ main()
+comment2.params=grid
+comment2.target=java.util.ArrayList\ getEmptyLocations(info.gridworld.grid.Grid)
+numComments=3

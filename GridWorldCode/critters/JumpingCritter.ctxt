@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=JumpingCritter
+comment1.params=
+comment1.target=java.util.ArrayList\ getMoveLocations()
+comment2.params=loc
+comment2.target=void\ makeMove(info.gridworld.grid.Location)
+numComments=3

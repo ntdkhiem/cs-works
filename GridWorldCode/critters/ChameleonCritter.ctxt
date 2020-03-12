@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ChameleonCritter
+comment0.text=\r\n\ A\ <code>ChameleonCritter</code>\ takes\ on\ the\ color\ of\ neighboring\ actors\ as\r\n\ it\ moves\ through\ the\ grid.\ <br\ />\r\n\ The\ implementation\ of\ this\ class\ is\ testable\ on\ the\ AP\ CS\ A\ and\ AB\ exams.\r\n
+comment1.params=actors
+comment1.target=void\ processActors(java.util.ArrayList)
+comment1.text=\r\n\ Randomly\ selects\ a\ neighbor\ and\ changes\ this\ critter's\ color\ to\ be\ the\r\n\ same\ as\ that\ neighbor's.\ If\ there\ are\ no\ neighbors,\ no\ action\ is\ taken.\r\n
+comment2.params=loc
+comment2.target=void\ makeMove(info.gridworld.grid.Location)
+comment2.text=\r\n\ Turns\ towards\ the\ new\ location\ as\ it\ moves.\r\n
+numComments=3

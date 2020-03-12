@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=SonicCritterRunner
-comment0.text=\r\n\ This\ class\ runs\ a\ world\ that\ contains\ critters.\ <br\ />\r\n\ This\ class\ is\ not\ tested\ on\ the\ AP\ CS\ A\ and\ AB\ exams.\r\n
 comment1.params=args
-comment1.target=void\ main(int[])
+comment1.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=java.awt.Color\ randomColor()
-numComments=3
+comment3.params=world
+comment3.target=info.gridworld.grid.Location\ generateRandomLocation(info.gridworld.actor.ActorWorld)
+numComments=4

@@ -25,14 +25,13 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.actor.ActorWorld;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.lang.Math;
 
 
 public class SonicCritterRunner {
-    public static void main(@NotNull String[] args) {
+    public static void main(String[] args) {
         ActorWorld world = new ActorWorld(new BoundedGrid<Actor>(50, 50));
         world.add(new Location(7, 8), new Rock());
         world.add(new Location(3, 3), new Rock());

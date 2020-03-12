@@ -1,3 +1,5 @@
+ 
+
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Actor;
 import info.gridworld.grid.Location;
@@ -20,7 +22,7 @@ public class BlusterCritter extends Critter {
         int startCol = getLocation().getCol() - 2;
         int endRow = getLocation().getRow() + 2;
         int endCol = getLocation().getCol() + 2;
-        // Location startingLoc = new Location(getLocation().getRow() - 2, getLocation().getCol() - 2);
+        Location startingLoc = new Location(getLocation().getRow() - 2, getLocation().getCol() - 2);
         
         while (startRow < 0 || startCol < 0) {
             if (startingLoc.getRow() < 0) {
@@ -30,7 +32,10 @@ public class BlusterCritter extends Critter {
                 startingLoc = new Location(startingLoc.getRow(), startingLoc.getCol() + 1);
             }
         }
+        return null;
     }
     
-    public ArrayList<Actor> processActors() {}
+    public ArrayList<Actor> processActors() {
+        return null;
+    }
 }

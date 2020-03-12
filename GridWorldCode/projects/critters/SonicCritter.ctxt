@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=SonicCritter
-comment1.params=id
-comment1.target=SonicCritter(int)
+comment1.params=id\ c\ world
+comment1.target=SonicCritter(int,\ java.awt.Color,\ info.gridworld.actor.ActorWorld)
+comment10.params=amount
+comment10.target=void\ scatterFlowers(int)
+comment11.params=
+comment11.target=info.gridworld.grid.Location\ generateRandomLocation()
 comment2.params=actors
 comment2.target=void\ processActors(java.util.ArrayList)
 comment3.params=
@@ -18,4 +22,4 @@ comment8.params=
 comment8.target=void\ moveBack()
 comment9.params=
 comment9.target=void\ losePoint()
-numComments=10
+numComments=12
